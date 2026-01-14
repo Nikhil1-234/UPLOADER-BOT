@@ -23,7 +23,8 @@ if __name__ == "__main__" :
         bot_token=Config.BOT_TOKEN,
         api_id=Config.API_ID,
         api_hash=Config.API_HASH,
-        sleep_threshold=30,
+        sleep_threshold=60, # Increased threshold
+        workers=20,
         plugins=plugins
     )
     print("Starting bot... waiting 5 seconds for time sync.")
