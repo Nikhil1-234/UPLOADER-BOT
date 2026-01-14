@@ -4,9 +4,10 @@ class Config(object):
     # get a token from @BotFather
     BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
     # The Telegram API things
-    API_ID = int(os.environ.get("API_ID", "22299340"))
+    raw_api_id = os.environ.get("API_ID", "22299340")
+    API_ID = int(raw_api_id) if raw_api_id and raw_api_id.strip() else 22299340
+
     API_HASH = os.environ.get("API_HASH", "09b09f3e2ff1306da4a19888f614d937")
-    # Get these values from my.telegram.org
     # the download location, where the HTTP Server runs
     DOWNLOAD_LOCATION = "./DOWNLOADS"
     # Telegram maximum file upload size
