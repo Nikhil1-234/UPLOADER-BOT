@@ -7,7 +7,11 @@ class Config(object):
     raw_api_id = os.environ.get("API_ID", "22299340")
     API_ID = int(raw_api_id) if raw_api_id and raw_api_id.strip() else 22299340
 
-    API_HASH = os.environ.get("API_HASH", "09b09f3e2ff1306da4a19888f614d937")
+        # Find this line in your config.py and change it to this:
+    raw_api_hash = os.environ.get("API_HASH", "09b09f3e2ff1306da4a19888f614d937")
+    API_HASH = raw_api_hash if raw_api_hash and raw_api_hash.strip() else "09b09f3e2ff1306da4a19888f614d937"
+    
+    #API_HASH = os.environ.get("API_HASH", "09b09f3e2ff1306da4a19888f614d937")
     # the download location, where the HTTP Server runs
     DOWNLOAD_LOCATION = "./DOWNLOADS"
     # Telegram maximum file upload size
