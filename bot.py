@@ -9,21 +9,22 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 logger = logging.getLogger(__name__)
 
 if __name__ == "__main__" :
-    # DEBUG LINES: Add these two lines
-    print(f"DEBUG: Using API_ID: {Config.API_ID}")
-    print(f"DEBUG: Using API_HASH: {Config.API_HASH}")
-
+    # 1. Create directory first
     if not os.path.isdir(Config.DOWNLOAD_LOCATION):
         os.makedirs(Config.DOWNLOAD_LOCATION)
 
-        Warrior = Clinton(
+    # 2. DEFINE THE PLUGINS VARIABLE (This was the missing part)
+    plugins = dict(root="plugins")
+
+    # 3. Now you can use 'plugins' in the client initialization
+    Warrior = Clinton(
         "@BOT_X_BOT",
         bot_token=Config.BOT_TOKEN,
         api_id=Config.API_ID,
         api_hash=Config.API_HASH,
-        sleep_threshold=30,  # Add this line
+        sleep_threshold=30,
         plugins=plugins
-        )
-
+    )
     
+    Warrior.run()
     
