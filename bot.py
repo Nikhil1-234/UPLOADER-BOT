@@ -1,6 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-# (c) Shrimadhav U K | Modifieded By : @DC4_WARRIOR
+
 
 import os
 import logging
@@ -10,9 +8,11 @@ logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(leve
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 logger = logging.getLogger(__name__)
 
-
 if __name__ == "__main__" :
-    # create download directory, if not exist
+    # DEBUG LINES: Add these two lines
+    print(f"DEBUG: Using API_ID: {Config.API_ID}")
+    print(f"DEBUG: Using API_HASH: {Config.API_HASH}")
+
     if not os.path.isdir(Config.DOWNLOAD_LOCATION):
         os.makedirs(Config.DOWNLOAD_LOCATION)
     plugins = dict(root="plugins")
@@ -22,3 +22,6 @@ if __name__ == "__main__" :
     api_hash=Config.API_HASH,
     plugins=plugins)
     Warrior.run()
+
+
+    
